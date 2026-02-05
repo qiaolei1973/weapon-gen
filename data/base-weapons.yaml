@@ -1,0 +1,661 @@
+# D&D 5E Base Weapons Database
+# 基础武器数据库
+# Source: Player's Handbook 5E
+
+weapons:
+  # Simple Melee Weapons - 简单近战武器
+  - id: "club"
+    name:
+      zh: "木棒"
+      en: "Club"
+    category: "simple_melee"
+    damage:
+      dice: "1d4"
+      type: "bludgeoning"
+    cost: "1 sp"
+    weight: 2
+    properties:
+      - "light"
+    description:
+      zh: "粗制滥造的木棒，常见于平民手中。虽然简陋，但聊胜于无。"
+      en: "A crude wooden club, commonly used by commoners. Simple but better than nothing."
+
+  - id: "dagger"
+    name:
+      zh: "匕首"
+      en: "Dagger"
+    category: "simple_melee"
+    damage:
+      dice: "1d4"
+      type: "piercing"
+    cost: "2 gp"
+    weight: 1
+    properties:
+      - "finesse"
+      - "light"
+      - "thrown"
+    thrown_range: "20/60"
+    description:
+      zh: "小型、易于隐藏的武器，适合近战和投掷。冒险者的必备装备。"
+      en: "A small, easily concealed weapon suitable for melee and thrown attacks. Essential gear for adventurers."
+
+  - id: "greatclub"
+    name:
+      zh: "大棒"
+      en: "Greatclub"
+    category: "simple_melee"
+    damage:
+      dice: "1d8"
+      type: "bludgeoning"
+    cost: "2 sp"
+    weight: 10
+    properties:
+      - "two_handed"
+    description:
+      zh: "比普通木棒更大的棍棒，需要双手使用。"
+      en: "A larger club that requires two hands to use effectively."
+
+  - id: "handaxe"
+    name:
+      zh: "手斧"
+      en: "Handaxe"
+    category: "simple_melee"
+    damage:
+      dice: "1d6"
+      type: "slashing"
+    cost: "5 gp"
+    weight: 2
+    properties:
+      - "light"
+      - "thrown"
+    thrown_range: "20/60"
+    description:
+      zh: "单手使用的战斧，可投掷。矮人和伐木工的最爱。"
+      en: "A single-headed axe that can be thrown. Favorite of dwarves and woodcutters."
+
+  - id: "javelin"
+    name:
+      zh: "标枪"
+      en: "Javelin"
+    category: "simple_melee"
+    damage:
+      dice: "1d6"
+      type: "piercing"
+    cost: "5 sp"
+    weight: 2
+    properties:
+      - "thrown"
+    thrown_range: "30/120"
+    description:
+      zh: "设计用于投掷的轻矛。可以在近战中使用，但更适合远程攻击。"
+      en: "A light spear designed for throwing. Can be used in melee but excels at ranged attacks."
+
+  - id: "light_hammer"
+    name:
+      zh: "轻锤"
+      en: "Light Hammer"
+    category: "simple_melee"
+    damage:
+      dice: "1d4"
+      type: "bludgeoning"
+    cost: "2 gp"
+    weight: 2
+    properties:
+      - "light"
+      - "thrown"
+    thrown_range: "20/60"
+    description:
+      zh: "小型锤子，可投掷。矮人和牧师常用。"
+      en: "A small hammer that can be thrown. Commonly used by dwarves and clerics."
+
+  - id: "mace"
+    name:
+      zh: "硬头锤"
+      en: "Mace"
+    category: "simple_melee"
+    damage:
+      dice: "1d6"
+      type: "bludgeoning"
+    cost: "5 gp"
+    weight: 4
+    properties: []
+    description:
+      zh: "带有金属重头的棍棒，牧师的经典武器。"
+      en: "A club with a heavy metal head. A classic weapon for clerics."
+
+  - id: "quarterstaff"
+    name:
+      zh: "四分杖"
+      en: "Quarterstaff"
+    category: "simple_melee"
+    damage:
+      dice: "1d6"
+      type: "bludgeoning"
+      versatile: "1d8"
+    cost: "2 sp"
+    weight: 4
+    properties:
+      - "versatile"
+    description:
+      zh: "长约六英尺的木棍，德鲁伊和法师的常用武器。"
+      en: "A six-foot wooden pole. Common weapon for druids and wizards."
+
+  - id: "sickle"
+    name:
+      zh: "镰刀"
+      en: "Sickle"
+    category: "simple_melee"
+    damage:
+      dice: "1d4"
+      type: "slashing"
+    cost: "1 gp"
+    weight: 2
+    properties:
+      - "light"
+    description:
+      zh: "原本用于收割的农具，也可用作武器。"
+      en: "An agricultural tool used for harvesting, also usable as a weapon."
+
+  - id: "spear"
+    name:
+      zh: "长矛"
+      en: "Spear"
+    category: "simple_melee"
+    damage:
+      dice: "1d6"
+      type: "piercing"
+      versatile: "1d8"
+    cost: "1 gp"
+    weight: 3
+    properties:
+      - "thrown"
+      - "versatile"
+    thrown_range: "20/60"
+    description:
+      zh: "最古老的武器之一，万能且有效。"
+      en: "One of the oldest weapons, versatile and effective."
+
+  # Martial Melee Weapons - 军用近战武器
+  - id: "battleaxe"
+    name:
+      zh: "战斧"
+      en: "Battleaxe"
+    category: "martial_melee"
+    damage:
+      dice: "1d8"
+      type: "slashing"
+      versatile: "1d10"
+    cost: "10 gp"
+    weight: 4
+    properties:
+      - "versatile"
+    description:
+      zh: "双刃斧，矮人和战士的经典武器。"
+      en: "A double-bitted axe. A classic weapon for dwarves and fighters."
+
+  - id: "flail"
+    name:
+      zh: "连枷"
+      en: "Flail"
+    category: "martial_melee"
+    damage:
+      dice: "1d8"
+      type: "bludgeoning"
+    cost: "10 gp"
+    weight: 2
+    properties: []
+    description:
+      zh: "带有链条和 spiked 球的武器，难以被招架。"
+      en: "A weapon with a chain and spiked ball. Difficult to parry."
+
+  - id: "glaive"
+    name:
+      zh: "戟"
+      en: "Glaive"
+    category: "martial_melee"
+    damage:
+      dice: "1d10"
+      type: "slashing"
+    cost: "20 gp"
+    weight: 6
+    properties:
+      - "reach"
+      - "two_handed"
+    description:
+      zh: "长柄刀刃武器，可以在远处攻击敌人。"
+      en: "A polearm with a blade on the end. Allows attacking enemies from a distance."
+
+  - id: "greataxe"
+    name:
+      zh: "巨斧"
+      en: "Greataxe"
+    category: "martial_melee"
+    damage:
+      dice: "1d12"
+      type: "slashing"
+    cost: "30 gp"
+    weight: 7
+    properties:
+      - "heavy"
+      - "two_handed"
+    description:
+      zh: "巨大的双手斧，野蛮人的标志性武器。"
+      en: "A massive two-handed axe. The signature weapon of barbarians."
+
+  - id: "greatsword"
+    name:
+      zh: "巨剑"
+      en: "Greatsword"
+    category: "martial_melee"
+    damage:
+      dice: "2d6"
+      type: "slashing"
+    cost: "50 gp"
+    weight: 6
+    properties:
+      - "heavy"
+      - "two_handed"
+    description:
+      zh: "长约五英尺的双手剑，战士和圣武士的最爱。"
+      en: "A five-foot-long two-handed sword. Favorite of fighters and paladins."
+
+  - id: "halberd"
+    name:
+      zh: "戟兵"
+      en: "Halberd"
+    category: "martial_melee"
+    damage:
+      dice: "1d10"
+      type: "slashing"
+    cost: "20 gp"
+    weight: 6
+    properties:
+      - "reach"
+      - "two_handed"
+    description:
+      zh: "结合了矛和斧刃的长柄武器，守卫和士兵常用。"
+      en: "A polearm combining a spear and axe blade. Commonly used by guards and soldiers."
+
+  - id: "lance"
+    name:
+      zh: "骑士枪"
+      en: "Lance"
+    category: "martial_melee"
+    damage:
+      dice: "1d12"
+      type: "piercing"
+    cost: "10 gp"
+    weight: 6
+    properties:
+      - "reach"
+      - "special"
+    description:
+      zh: "专用于骑枪冲锋的长矛，需要坐骑才能发挥效力。"
+      en: "A spear specialized for mounted charges. Requires a mount to be effective."
+
+  - id: "longsword"
+    name:
+      zh: "长剑"
+      en: "Longsword"
+    category: "martial_melee"
+    damage:
+      dice: "1d8"
+      type: "slashing"
+      versatile: "1d10"
+    cost: "15 gp"
+    weight: 3
+    properties:
+      - "versatile"
+    description:
+      zh: "经典的战士武器，剑刃长约三尺。既可用于劈砍，也可用于突刺。"
+      en: "A classic fighter's weapon with a three-foot blade. Can be used for slashing or thrusting."
+
+  - id: "maul"
+    name:
+      zh: "巨锤"
+      en: "Maul"
+    category: "martial_melee"
+    damage:
+      dice: "2d6"
+      type: "bludgeoning"
+    cost: "10 gp"
+    weight: 10
+    properties:
+      - "heavy"
+      - "two_handed"
+    description:
+      zh: "巨大的战争锤，可以粉碎盔甲和骨头。"
+      en: "A massive war hammer that can crush armor and bone."
+
+  - id: "morningstar"
+    name:
+      zh: "晨星"
+      en: "Morningstar"
+    category: "martial_melee"
+    damage:
+      dice: "1d8"
+      type: "piercing"
+    cost: "15 gp"
+    weight: 4
+    properties: []
+    description:
+      zh: "带有 spikes 的球头锤，可造成穿刺伤害。"
+      en: "A spiked ball mace that deals piercing damage."
+
+  - id: "pike"
+    name:
+      zh: "长枪"
+      en: "Pike"
+    category: "martial_melee"
+    damage:
+      dice: "1d10"
+      type: "piercing"
+    cost: "5 gp"
+    weight: 18
+    properties:
+      - "reach"
+      - "two_handed"
+    description:
+      zh: "极长的长矛，可达10-15英尺。用于对抗骑兵。"
+      en: "An extremely long spear, 10-15 feet in length. Used to counter cavalry."
+
+  - id: "rapier"
+    name:
+      zh: "刺剑"
+      en: "Rapier"
+    category: "martial_melee"
+    damage:
+      dice: "1d8"
+      type: "piercing"
+    cost: "25 gp"
+    weight: 2
+    properties:
+      - "finesse"
+    description:
+      zh: "细长的剑，强调突刺而非劈砍。游荡者和贵族的最爱。"
+      en: "A thin sword emphasizing thrusts over cuts. Favorite of rogues and nobles."
+
+  - id: "scimitar"
+    name:
+      zh: "弯刀"
+      en: "Scimitar"
+    category: "martial_melee"
+    damage:
+      dice: "1d6"
+      type: "slashing"
+    cost: "25 gp"
+    weight: 3
+    properties:
+      - "finesse"
+      - "light"
+    description:
+      zh: "弯曲的单刃剑，适合劈砍。德鲁伊常用。"
+      en: "A curved single-edged sword ideal for slashing. Commonly used by druids."
+
+  - id: "shortsword"
+    name:
+      zh: "短剑"
+      en: "Shortsword"
+    category: "martial_melee"
+    damage:
+      dice: "1d6"
+      type: "piercing"
+    cost: "10 gp"
+    weight: 2
+    properties:
+      - "finesse"
+      - "light"
+    description:
+      zh: "介于匕首和长剑之间的武器，适合近战。"
+      en: "A weapon between a dagger and a longsword, suitable for close combat."
+
+  - id: "trident"
+    name:
+      zh: "三叉戟"
+      en: "Trident"
+    category: "martial_melee"
+    damage:
+      dice: "1d6"
+      type: "piercing"
+      versatile: "1d8"
+    cost: "5 gp"
+    weight: 4
+    properties:
+      - "thrown"
+      - "versatile"
+    thrown_range: "20/60"
+    description:
+      zh: "类似于长矛但有三股尖刃，与海洋生物相关。"
+      en: "Similar to a spear but with three prongs. Associated with sea creatures."
+
+  - id: "war_pick"
+    name:
+      zh: "战镐"
+      en: "War Pick"
+    category: "martial_melee"
+    damage:
+      dice: "1d8"
+      type: "piercing"
+    cost: "5 gp"
+    weight: 2
+    properties: []
+    description:
+      zh: "类似矿工的镐，但用于穿透盔甲。"
+      en: "Similar to a miner's pick but designed to penetrate armor."
+
+  - id: "warhammer"
+    name:
+      zh: "战锤"
+      en: "Warhammer"
+    category: "martial_melee"
+    damage:
+      dice: "1d8"
+      type: "bludgeoning"
+      versatile: "1d10"
+    cost: "15 gp"
+    weight: 2
+    properties:
+      - "versatile"
+    description:
+      zh: "矮人的经典武器，可有效地对付穿着盔甲的敌人。"
+      en: "A classic dwarven weapon, effective against armored enemies."
+
+  - id: "whip"
+    name:
+      zh: "鞭子"
+      en: "Whip"
+    category: "martial_melee"
+    damage:
+      dice: "1d4"
+      type: "slashing"
+    cost: "2 gp"
+    weight: 3
+    properties:
+      - "finesse"
+      - "reach"
+      - "special"
+    description:
+      zh: "可以攻击远距离目标的柔性武器，但造成的伤害较低。"
+      en: "A flexible weapon that can attack distant targets but deals low damage."
+
+  # Simple Ranged Weapons - 简单远程武器
+  - id: "crossbow_light"
+    name:
+      zh: "轻弩"
+      en: "Light Crossbow"
+    category: "simple_ranged"
+    damage:
+      dice: "1d8"
+      type: "piercing"
+    cost: "25 gp"
+    weight: 5
+    properties:
+      - "ammunition"
+      - "loading"
+      - "two_handed"
+    range: "80/320"
+    description:
+      zh: "小型弩，可以单臂上弦。"
+      en: "A small crossbow that can be cocked with one hand."
+
+  - id: "dart"
+    name:
+      zh: "飞镖"
+      en: "Dart"
+    category: "simple_ranged"
+    damage:
+      dice: "1d4"
+      type: "piercing"
+    cost: "5 cp"
+    weight: 0.25
+    properties:
+      - "finesse"
+      - "thrown"
+    thrown_range: "20/60"
+    description:
+      zh: "设计用于投掷的小型武器。"
+      en: "A small weapon designed for throwing."
+
+  - id: "shortbow"
+    name:
+      zh: "短弓"
+      en: "Shortbow"
+    category: "simple_ranged"
+    damage:
+      dice: "1d6"
+      type: "piercing"
+    cost: "25 gp"
+    weight: 2
+    properties:
+      - "ammunition"
+      - "two_handed"
+    range: "80/320"
+    description:
+      zh: "较小的弓，适合在狭窄空间使用。"
+      en: "A smaller bow suitable for use in confined spaces."
+
+  - id: "sling"
+    name:
+      zh: "投石索"
+      en: "Sling"
+    category: "simple_ranged"
+    damage:
+      dice: "1d4"
+      type: "bludgeoning"
+    cost: "1 sp"
+    weight: 0
+    properties:
+      - "ammunition"
+    range: "30/120"
+    description:
+      zh: "简单的投掷武器，可以发射石块或弹丸。"
+      en: "A simple throwing weapon that can hurl stones or bullets."
+
+  # Martial Ranged Weapons - 军用远程武器
+  - id: "blowgun"
+    name:
+      zh: "吹箭筒"
+      en: "Blowgun"
+    category: "martial_ranged"
+    damage:
+      dice: "1"
+      type: "piercing"
+    cost: "10 gp"
+    weight: 1
+    properties:
+      - "ammunition"
+      - "loading"
+    range: "25/100"
+    description:
+      zh: "用于吹出小型飞镖的管状武器，通常用于涂毒。"
+      en: "A tube weapon for blowing small darts, typically used with poison."
+
+  - id: "crossbow_hand"
+    name:
+      zh: "手弩"
+      en: "Hand Crossbow"
+    category: "martial_ranged"
+    damage:
+      dice: "1d6"
+      type: "piercing"
+    cost: "75 gp"
+    weight: 3
+    properties:
+      - "ammunition"
+      - "light"
+      - "loading"
+    range: "30/120"
+    description:
+      zh: "可以单手使用的小型弩，游荡者的最爱。"
+      en: "A small crossbow that can be used with one hand. Favorite of rogues."
+
+  - id: "crossbow_heavy"
+    name:
+      zh: "重弩"
+      en: "Heavy Crossbow"
+    category: "martial_ranged"
+    damage:
+      dice: "1d10"
+      type: "piercing"
+    cost: "50 gp"
+    weight: 18
+    properties:
+      - "ammunition"
+      - "heavy"
+      - "loading"
+      - "two_handed"
+    range: "100/400"
+    description:
+      zh: "大型弩，威力强大但需要双手使用。"
+      en: "A large crossbow with great power but requires two hands."
+
+  - id: "longbow"
+    name:
+      zh: "长弓"
+      en: "Longbow"
+    category: "martial_ranged"
+    damage:
+      dice: "1d8"
+      type: "piercing"
+    cost: "50 gp"
+    weight: 2
+    properties:
+      - "ammunition"
+      - "heavy"
+      - "two_handed"
+    range: "150/600"
+    description:
+      zh: "大型弓，需要强大的力量才能拉开。游侠的经典武器。"
+      en: "A large bow requiring significant strength to draw. The classic ranger weapon."
+
+# Weapon Categories
+categories:
+  simple_melee:
+    name:
+      zh: "简单近战武器"
+      en: "Simple Melee Weapons"
+    description: "普通人即可使用的近战武器"
+
+  martial_melee:
+    name:
+      zh: "军用近战武器"
+      en: "Martial Melee Weapons"
+    description: "需要专业训练的近战武器"
+
+  simple_ranged:
+    name:
+      zh: "简单远程武器"
+      en: "Simple Ranged Weapons"
+    description: "普通人即可使用的远程武器"
+
+  martial_ranged:
+    name:
+      zh: "军用远程武器"
+      en: "Martial Ranged Weapons"
+    description: "需要专业训练的远程武器"
+
+# Filter Options
+filters:
+  proficiency: ["simple", "martial", "all"]
+  range: ["melee", "ranged", "all"]
+  damage_type: ["bludgeoning", "piercing", "slashing", "all"]

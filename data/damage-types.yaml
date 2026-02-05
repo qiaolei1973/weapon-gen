@@ -1,0 +1,169 @@
+# D&D 5E Damage Types
+# 伤害类型定义
+# Source: Player's Handbook 5E
+
+damage_types:
+  acid:
+    name:
+      zh: "酸液"
+      en: "Acid"
+    code: "acid"
+    description:
+      zh: "腐蚀性伤害，能腐蚀有机和无机物质。某些生物（如泥怪、黑龙）具有酸液抗性。"
+      en: "Corrosive damage that eats away organic and inorganic material. Some creatures (like oozes, black dragons) have acid resistance."
+    common: false
+    weapon_damage: false
+
+  bludgeoning:
+    name:
+      zh: "钝击"
+      en: "Bludgeoning"
+    code: "bludgeoning"
+    description:
+      zh: "通过撞击造成的伤害，如木棒、硬头锤、徒手攻击等。某些生物（如骷髅、构装体）具有钝击抗性。"
+      en: "Damage caused by blunt force, such as clubs, maces, unarmed strikes, etc. Some creatures (skeletons, constructs) have bludgeoning resistance."
+    common: true
+    weapon_damage: true
+
+  cold:
+    name:
+      zh: "冷冻"
+      en: "Cold"
+    code: "cold"
+    description:
+      zh: "极度寒冷造成的伤害。某些生物（如霜巨人、冰元素）具有冷冻抗性。"
+      en: "Extreme cold damage. Some creatures (frost giants, ice elementals) have cold resistance."
+    common: false
+    weapon_damage: false
+
+  fire:
+    name:
+      zh: "火焰"
+      en: "Fire"
+    code: "fire"
+    description:
+      zh: "燃烧造成的伤害。某些生物（如红龙、火元素）具有火焰抗性。"
+      en: "Burning damage. Some creatures (red dragons, fire elementals) have fire resistance."
+    common: false
+    weapon_damage: false
+
+  force:
+    name:
+      zh: "力场"
+      en: "Force"
+    code: "force"
+    description:
+      zh: "纯粹魔法能量造成的伤害。几乎没有生物具有力场抗性。"
+      en: "Pure magical energy damage. Almost no creatures have force resistance."
+    common: false
+    weapon_damage: false
+
+  lightning:
+    name:
+      zh: "闪电"
+      en: "Lightning"
+    code: "lightning"
+    description:
+      zh: "电能造成的伤害。某些生物（如蓝龙）具有闪电抗性。"
+      en: "Electrical damage. Some creatures (blue dragons) have lightning resistance."
+    common: false
+    weapon_damage: false
+
+  necrotic:
+    name:
+      zh: "黯蚀"
+      en: "Necrotic"
+    code: "necrotic"
+    description:
+      zh: "与死亡、腐朽和黑暗能量相关的伤害。某些不死生物具有黯蚀抗性。"
+      en: "Damage associated with death, decay, and dark energy. Some undead creatures have necrotic resistance."
+    common: false
+    weapon_damage: false
+
+  piercing:
+    name:
+      zh: "穿刺"
+      en: "Piercing"
+    code: "piercing"
+    description:
+      zh: "通过穿刺造成的伤害，如匕首、长矛、箭矢等。某些生物（如骷髅、幻术装置）具有穿刺抗性。"
+      en: "Damage caused by puncturing, such as daggers, spears, arrows, etc. Some creatures (skeletons, illusory constructs) have piercing resistance."
+    common: true
+    weapon_damage: true
+
+  poison:
+    name:
+      zh: "毒素"
+      en: "Poison"
+    code: "poison"
+    description:
+      zh: "毒性物质造成的伤害。某些生物（如精灵、妖精）具有毒素抗性。"
+      en: "Toxic substance damage. Some creatures (elves, fey) have poison resistance."
+    common: false
+    weapon_damage: false
+
+  psychic:
+    name:
+      zh: "灵能"
+      en: "Psychic"
+    code: "psychic"
+    description:
+      zh: "心灵力量造成的伤害。几乎没有生物具有灵能抗性。"
+      en: "Mental power damage. Almost no creatures have psychic resistance."
+    common: false
+    weapon_damage: false
+
+  radiant:
+    name:
+      zh: "光耀"
+      en: "Radiant"
+    code: "radiant"
+    description:
+      zh: "神圣光芒造成的伤害。某些不死生物和邪恶生物具有光耀弱点。"
+      en: "Divine light damage. Some undead and evil creatures have radiant vulnerability."
+    common: false
+    weapon_damage: false
+
+  slashing:
+    name:
+      zh: "挥砍"
+      en: "Slashing"
+    code: "slashing"
+    description:
+      zh: "通过挥砍造成的伤害，如剑类、斧头、镰刀等。某些生物（如骷髅、植物怪）具有挥砍抗性。"
+      en: "Damage caused by slashing, such as swords, axes, scythes, etc. Some creatures (skeletons, plant creatures) have slashing resistance."
+    common: true
+    weapon_damage: true
+
+  thunder:
+    name:
+      zh: "雷鸣"
+      en: "Thunder"
+    code: "thunder"
+    description:
+      zh: "强烈声响和震荡造成的伤害。某些生物具有雷鸣抗性。"
+      en: "Intense sound and concussion damage. Some creatures have thunder resistance."
+    common: false
+    weapon_damage: false
+
+# Weapon-Common Damage Types (for filtering)
+weapon_damage_types:
+  - bludgeoning
+  - piercing
+  - slashing
+
+# Elemental/Magic Damage Types (for magic weapons)
+elemental_damage_types:
+  - acid
+  - cold
+  - fire
+  - lightning
+  - necrotic
+  - poison
+  - radiant
+  - thunder
+
+# Special Damage Types
+special_damage_types:
+  - force
+  - psychic

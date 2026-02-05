@@ -1,0 +1,114 @@
+# D&D 5E Weapon Properties
+# 武器属性定义
+# Source: Player's Handbook 5E
+
+properties:
+  ammunition:
+    name:
+      zh: "弹药"
+      en: "Ammunition"
+    code: "ammunition"
+    description:
+      zh: "需要弹药才能进行远程攻击。弹袋、箭袋或类似容器的弹药可用于攻击。远程武器使用弹药属性时，如果你有弹药容器（箭袋、弹袋等），可以从容器中抽取一枚弹药进行攻击。"
+      en: "The weapon requires ammunition to be used. You need a container of ammunition (quiver, pouch, etc.) to use this weapon."
+
+  finesse:
+    name:
+      zh: "灵巧"
+      en: "Finesse"
+    code: "finesse"
+    description:
+      zh: "当你使用该武器进行攻击检定时，可以选择使用力量或敏捷调整值（取较高值）。伤害掷骰同样使用该属性调整值。"
+      en: "When making an attack with this weapon, you can use your Strength or Dexterity modifier (whichever is higher) for the attack and damage rolls."
+
+  heavy:
+    name:
+      zh: "重型"
+      en: "Heavy"
+    code: "heavy"
+    description:
+      zh: "小型生物在使用该武器时，攻击检定具有劣势。体型为小型或更小的生物在战斗中难以有效使用重型武器。"
+      en: "Small creatures have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small creature to use effectively."
+
+  light:
+    name:
+      zh: "轻型"
+      en: "Light"
+    code: "light"
+    description:
+      zh: "轻型武器小巧且易于操控，适合用于双武器战斗。当你使用双武器战斗时，两件武器都必须具有轻型属性。"
+      en: "A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons."
+
+  loading:
+    name:
+      zh: "装填"
+      en: "Loading"
+    code: "loading"
+    description:
+      zh: "由于需要花时间装填弹药，你只能在每个攻击动作、附赠动作或反应中射击一次。射速等其他属性不会增加装填武器的攻击次数。"
+      en: "Due to the time needed to load this weapon, you can fire only one piece of ammunition from it when you use an action, bonus action, or reaction to fire it, regardless of the number of attacks you can normally make."
+
+  range:
+    name:
+      zh: "射程"
+      en: "Range"
+    code: "range"
+    description:
+      zh: "武器具有正常射程和长射程。攻击正常射程内的目标时没有惩罚。攻击长射程内但超出正常射程的目标时，攻击检定具有劣势。"
+      en: "A weapon that can be used to make a ranged attack has a range shown in parentheses. The range lists two numbers: the normal range and the long range. Attacks against targets beyond normal range have disadvantage."
+    example: "(20/60)"
+
+  reach:
+    name:
+      zh: "延展"
+      en: "Reach"
+    code: "reach"
+    description:
+      zh: "该武器增加你的近战攻击触及范围。正常情况下，近战武器只能攻击5尺内的目标，但具有延展属性的武器可以攻击10尺内的目标。"
+      en: "This weapon adds 5 feet to your reach when you attack with it. A normal melee reach is 5 feet, but this weapon allows you to attack enemies up to 10 feet away."
+
+  special:
+    name:
+      zh: "特殊"
+      en: "Special"
+    code: "special"
+    description:
+      zh: "该武器具有特殊的规则或使用方法，具体说明见武器描述。"
+      en: "A weapon with the special property has unusual rules governing its use, explained in the weapon's description."
+
+  thrown:
+    name:
+      zh: "投掷"
+      en: "Thrown"
+    code: "thrown"
+    description:
+      zh: "该武器可以作为投掷武器使用。如果武器具有射程属性，括号内的数字表示正常射程和长射程。投掷武器攻击超出正常射程的目标时具有劣势。"
+      en: "If a weapon has the thrown property, you can throw the weapon to make a ranged attack. If the weapon has the range property, the numbers in parentheses indicate the normal and long range."
+
+  two_handed:
+    name:
+      zh: "双手"
+      en: "Two-Handed"
+    code: "two_handed"
+    description:
+      zh: "该武器需要双手才能使用。你的空闲手不足以进行其他需要使用手的动作。"
+      en: "This weapon requires two hands to use. This property is closely related to the weapon's size and bulk."
+
+  versatile:
+    name:
+      zh: "万能"
+      en: "Versatile"
+    code: "versatile"
+    description:
+      zh: "该武器可以用一只手或两只手使用。括号内的伤害值表示双手使用时的伤害。"
+      en: "This weapon can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack."
+
+# 2024 PHB 新增属性 ( mastery property - 可选实现)
+mastery:
+  name:
+    zh: "精通"
+    en: "Mastery"
+  code: "mastery"
+  description:
+    zh: "该武器具有精通属性，允许在特定条件下使用特殊的精通动作。详见 PHB 2024。"
+    en: "This weapon has a mastery property, enabling a special masteries action under certain conditions. See PHB 2024 for details."
