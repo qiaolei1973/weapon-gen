@@ -27,6 +27,14 @@ class WeaponGenerator:
         self._weapons = None
         self._properties = None
         self._damage_types = None
+        self._legendary_weapons = None
+        self._rarities = {
+            'common': {'zh': '常见', 'en': 'Common'},
+            'uncommon': {'zh': '少见', 'en': 'Uncommon'},
+            'rare': {'zh': '稀有', 'en': 'Rare'},
+            'very_rare': {'zh': '非常稀有', 'en': 'Very Rare'},
+            'legendary': {'zh': '传奇', 'en': 'Legendary'}
+        }
 
     def _load_yaml(self, filename: str) -> Dict[str, Any]:
         """加载 YAML 文件"""
@@ -57,6 +65,17 @@ class WeaponGenerator:
             data = self._load_yaml('damage-types.yaml')
             self._damage_types = data['damage_types']
         return self._damage_types
+
+    @property
+    def legendary_weapons(self) -> List[Dict[str, Any]]:
+        """获取所有传奇武器数据"""
+        if self._legendary_weapons is None:
+            try:
+                data = self._load_yaml('legendary-weapons.yaml')
+                self._legendary_weapons = data['weapons']
+            except FileNotFoundError:
+                self._legendary_weapons = []
+        return self._legendary_weapons
 
     def generate(
         self,
@@ -205,6 +224,121 @@ class WeaponGenerator:
     def list_damage_types(self) -> List[str]:
         """获取所有伤害类型"""
         return sorted(set(w['damage']['type'] for w in self.weapons))
+
+    def generate_legendary(self, language: str = 'zh') -> Dict[str, Any]:
+        """
+        随机生成传奇武器
+
+        Args:
+            language: 语言 ('zh' 或 'en')
+
+        Returns:
+            传奇武器字典，包含特殊能力
+        """
+        if not self.legendary_weapons:
+            raise ValueError("没有找到传奇武器数据")
+
+        # 随机选择一个传奇武器
+        weapon = random.choice(self.legendary_weapons)
+
+        # 根据语言设置返回相应的内容
+        result = self._format_legendary_weapon(weapon, language)
+
+        return result
+
+    def get_legendary_by_id(self, weapon_id: str, language: str = 'zh') -> Optional[Dict[str, Any]]:
+        """
+        根据 ID 获取传奇武器
+
+        Args:
+            weapon_id: 武器 ID
+            language: 语言 ('zh' 或 'en')
+
+        Returns:
+            传奇武器数据，如果未找到则返回 None
+        """
+        for weapon in self.legendary_weapons:
+            if weapon['id'] == weapon_id:
+                return self._format_legendary_weapon(weapon, language)
+        return None
+
+    def list_legendary_weapons(self) -> List[str]:
+        """获取所有传奇武器 ID"""
+        return [w['id'] for w in self.legendary_weapons]
+
+    def _format_legendary_weapon(self, weapon: Dict[str, Any], language: str) -> Dict[str, Any]:
+        """
+        格式化传奇武器数据
+
+        Args:
+            weapon: 原始武器数据
+            language: 语言 ('zh' 或 'en')
+
+        Returns:
+            格式化后的传奇武器数据
+        """
+        # 获取稀有度信息
+        rarity = weapon.get('rarity', 'legendary')
+        rarity_info = self._rarities.get(rarity, self._rarities['legendary'])
+
+        result = {
+            'id': weapon['id'],
+            'name': weapon['name'][language],
+            'category': weapon['category'],
+            'rarity': rarity,
+            'rarity_name': rarity_info[language],
+            'damage': {
+                'dice': weapon['damage']['dice'],
+                'type': weapon['damage']['type'],
+                'type_name': self.damage_types.get(weapon['damage']['type'], {}).get('name', {}).get(language, weapon['damage']['type'])
+            },
+            'cost': weapon['cost'],
+            'weight': weapon['weight'],
+            'properties': [],
+            'description': weapon['description'][language]
+        }
+
+        # 添加万能伤害（如果有）
+        if 'versatile' in weapon['damage']:
+            result['damage']['versatile'] = weapon['damage']['versatile']
+
+        # 添加射程（如果有）
+        if 'range' in weapon:
+            result['range'] = weapon['range']
+
+        # 添加投掷射程（如果有）
+        if 'thrown_range' in weapon:
+            result['thrown_range'] = weapon['thrown_range']
+
+        # 添加魔法加成（如果有）
+        if 'magical_bonus' in weapon:
+            result['magical_bonus'] = weapon['magical_bonus']
+
+        # 添加充能（如果有）
+        if 'charges' in weapon:
+            result['charges'] = weapon['charges']
+
+        # 格式化武器属性
+        for prop_id in weapon.get('properties', []):
+            if prop_id in self.properties:
+                prop = self.properties[prop_id]
+                result['properties'].append({
+                    'id': prop_id,
+                    'name': prop['name'][language],
+                    'description': prop['description'][language]
+                })
+
+        # 添加特殊能力
+        if 'special_abilities' in weapon:
+            result['special_abilities'] = []
+            for ability in weapon['special_abilities']:
+                result['special_abilities'].append({
+                    'id': ability['id'],
+                    'name': ability['name'][language],
+                    'description': ability['description'][language]
+                })
+
+        return result
 
 
 def main():
